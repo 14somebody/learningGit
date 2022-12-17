@@ -68,7 +68,7 @@
 
 ​	这里的签名和登录远程库的账号密码没有关系。若设置了项目/仓库级别的签名，则设置到了当前目录下的.git目录下的config文件中去了，若设置了系统级别的签名，则会在C:/user/lxy 目录下生成一个.gitconfig的隐藏文件，其中签名就在这个文件中。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215190653317.png" alt="image-20221215190653317" style="zoom:80%;" />
+<img src=".\images\image-20221215190653317.png" alt="image-20221215190653317" style="zoom:80%;" />
 
 
 
@@ -80,17 +80,17 @@
 
 使用命令 `git status` 查看状态，若工作目录下没有文件，则依照上图所示；若有则依照下图所示。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215191056642.png" alt="image-20221215191056642" style="zoom:80%;" />
+<img src=".\images\image-20221215191056642.png" alt="image-20221215191056642" style="zoom:80%;" />
 
 第三行提示有未追踪的文件(untracked files)，我们使用 `git add git.md` 将git.md提交至本地仓库的缓存区（./.git/index)，而缓冲区用于跟踪文件的变更，可以使用 `git ls-files --stage` 命令查看缓冲区中所有文件的信息，包括文件名、状态、指纹等信息。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215200604699.png" alt="image-20221215200604699" style="zoom: 80%;" />
+<img src=".\images\image-20221215200604699.png" alt="image-20221215200604699" style="zoom: 80%;" />
 
 再次查看git状态，提示可以使用 `git rm --cached git.md` 命令来将暂存区文件删除，删后工作区中源文件不会删除，变回上个图的状态。
 
 使用 `git commit git.md` 进行提交至本地仓库，便会进入vim编辑器，如下图。在此模式可以输入此次做了哪些变化的信息。输入 `i` 进入编辑模式，输入信息之后按esc退出编辑模式，按 `：` 进入命令行模式，按 `wq` 保存退出，便提交成功。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215220837590.png" alt="image-20221215220837590" style="zoom:80%;" />
+<img src=".\images\image-20221215220837590.png" alt="image-20221215220837590" style="zoom:80%;" />
 
 <img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215221641030.png" alt="image-20221215221641030" style="zoom:80%;" />
 
@@ -98,11 +98,11 @@
 
 再次查看git的状态，如下图
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215223624562.png" alt="image-20221215223624562" style="zoom:80%;" />
+<img src=".\images\image-20221215223624562.png" alt="image-20221215223624562" style="zoom:80%;" />
 
 提交也可以使用如下不进入vim的方式进行添加消息的提交
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221215224625114.png" alt="image-20221215224625114" style="zoom:80%;" />
+<img src=".\images\image-20221215224625114.png" alt="image-20221215224625114" style="zoom:80%;" />
 
 这次没有了根提交，1 file changed 表示发生了一次文件变更，14 insertions(+), 2 deletions(-) 分别表示发生了14次新增和2次删除。例如，假设在一次保存中，新增了5行内容，并删除了3行内容。那么新增和删除的数量都会增加，新增数量会增加5，删除数量会增加3。
 
@@ -124,7 +124,7 @@
 
 使用`git log` 查看详细记录，但可能存在很多历史记录，太多可能要点空格进行翻页（空格向下翻页、b向上翻页、q退出），看起来不方便，可以使用`git log --pretty=oneline` 使得每条数据显示一行，但会省略提交日期和作者、邮箱信息，如下图所示
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221216001906835.png" alt="image-20221216001906835" style="zoom:80%;" />
+<img src=".\images\teshu.png" alt="teshu" style="zoom:80%;" />
 
 ### 💎AI对HEAD的解释（插入讲）
 
@@ -132,7 +132,7 @@
 
 也可以使用 `git log --oneline` 简洁显示数据，但哈希值只会节选一部分；同时也可以使用 `git reflog` 来查看版本信息，其中哈希值也为节选部分，HEAD@{0}表示0步可以到达。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221216003121470.png" alt="image-20221216003121470" style="zoom:80%;" />
+<img src=".\images\image-20221216003121470.png" alt="image-20221216003121470" style="zoom:80%;" />
 
 ### 💎AI对git log 和git reflog 哈希值不同的原因解释
 
@@ -203,7 +203,7 @@ git diff 要比较的文件名A加上后缀(或是历史版本) (要比较的文
 
 也可以是`git diff HEAD git.md` ，在这里，`HEAD` 指向的是当前的最新提交，它代表你当前所在的分支。因此，这条命令会将当前分支中最新的提交和工作区中的 `git.md` 文件进行比较。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221216172739475.png" alt="image-20221216172739475" style="zoom:80%;" />
+<img src=".\images\image-20221216172739475.png" alt="image-20221216172739475" style="zoom:80%;" />
 
 使用 `git diff` 命令时，默认情况下会比较工作区中的文件和暂存区中的文件。
 
@@ -234,7 +234,7 @@ git diff branch1 branch2
 
 该`-v`标志代表“详细”，它使 Git 显示每个分支的完整提交哈希，以及每个分支上最近提交的提交消息。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221216182809336.png" alt="image-20221216182809336" style="zoom:80%;" />
+<img src=".\images\image-20221216182809336.png" alt="image-20221216182809336" style="zoom:80%;" />
 
 其中（`*` ）表示当前分支。
 
@@ -293,11 +293,11 @@ git commit -m "日志信息"		//注意此处不能加上冲突文件名，会产
 
 采用了快照（snapshot）的方式，而不是采用了每个版本保存不一样的信息最后拼接的方式。具体来讲就是若文件没有变化，就指向之前版本的指针；若发生变化则存储变化的文件。每一次提交的文件都会产生一个Hash值，从而生成一个树对象，而树对象也有自己的Hash值，提交对象包含了树对象，也有自己的一个Hash值。提交对象和它的父对象形成了一个链条，如下图
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221217000610712.png" alt="image-20221217000610712" style="zoom:80%;" />
+<img src=".\images\image-20221217000610712.png" alt="image-20221217000610712" style="zoom:80%;" />
 
 新建一个分支，只是将这个分支指针指向当前分支的当前版本，即快照，不涉及文件的复制，效率很高。切换分支也只是改变HEAD指针的指向。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221217001710850.png" alt="image-20221217001710850" style="zoom:80%;" />
+<img src=".\images\image-20221217001710850.png" alt="image-20221217001710850" style="zoom:80%;" />
 
 ## 在本地给远程库地址起别名
 
@@ -317,7 +317,7 @@ git remote set-url upstream https://github.com/USERNAME/new-repo.git
 
 其中 `USERNAME` 是新远程仓库的所有者的 GitHub 用户名，`new-repo` 是新远程仓库的名称。
 
-<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221217111911881.png" alt="image-20221217111911881" style="zoom:80%;" />
+<img src=".\images\image-20221217111911881.png" alt="image-20221217111911881" style="zoom:80%;" />
 
 ## 推送操作
 
@@ -327,9 +327,20 @@ git remote set-url upstream https://github.com/USERNAME/new-repo.git
 git push 远程仓库地址别名 分支名
 ```
 
-### 在此期间出现了代理服务器问题
+### 设置代理服务器
+
+若代理服务器类型为http，则使用以下命令，若是https则仅修改https就行，下述取消代理类似
 
 ```txt
 git config --global http.proxy http://proxy.example.com:8080
 ```
 
+使用以下命令取消代理
+
+```txt
+git config --global --unset http.proxy
+```
+
+### 📢注意
+
+Git-2.39.0-64-bit安装后会产生找不到UI助手的问题，可以选择回退到Git-2.38.1-64-bit版本或是下载Github Desktop来解决。
