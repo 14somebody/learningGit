@@ -327,3 +327,9 @@ git remote set-url upstream https://github.com/USERNAME/new-repo.git
 git push 远程仓库地址别名 分支名
 ```
 
+### 在此期间出现了代理服务器问题
+
+```txt
+git config --global http.proxy http://proxy.example.com:8080
+```
+
