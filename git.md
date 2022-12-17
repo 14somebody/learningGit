@@ -42,7 +42,7 @@
 
 ### 命令
 
-​	分为两种，一种是项目/仓库级别，即就对这个项目而言的签名，使用命令 `git config user.name liyonxin`和命令 `git config 																					user.email 1650945363@qq.com` ; 另一种是系统用户级别，即对登录这类操作系统的用户而言的签名，使用命令 `git config --global user.name liyonxin` 和命令`git config --globaluser.email 1650945363@qq.com` 
+​	分为两种，一种是项目/仓库级别，即就对这个项目而言的签名，使用命令 `git config user.name liyonxin`和命令 `git config 																					user.email xxxxxxxxxx@qq.com` ; 另一种是系统用户级别，即对登录这类操作系统的用户而言的签名，使用命令 `git config --global user.name liyonxin` 和命令`git config --globaluser.email xxxxxxxxxx@qq.com` 
 
 ​	若两者都存在，则项目/仓库级别优先；若两者都没有会报错不执行。
 
@@ -299,4 +299,31 @@ git commit -m "日志信息"		//注意此处不能加上冲突文件名，会产
 
 <img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221217001710850.png" alt="image-20221217001710850" style="zoom:80%;" />
 
-32
+## 在本地给远程库地址起别名
+
+使用 `git remote add` 命令将远程仓库添加到本地仓库。
+
+```txt
+git remote add 本地库起的别名 Github仓库地址https
+```
+
+您可以使用此别名来推送或拉取远程仓库的内容。例如，要从远程仓库拉取更新，可以使用 `git pull upstream` 命令。
+
+要更改远程仓库的地址别名，请使用 `git remote set-url` 命令，并指定新的远程仓库 URL。例如，如果要将远程仓库地址别名 `upstream` 更改为名为 `new-repo` 的远程仓库，请使用以下命令：
+
+```txt
+git remote set-url upstream https://github.com/USERNAME/new-repo.git
+```
+
+其中 `USERNAME` 是新远程仓库的所有者的 GitHub 用户名，`new-repo` 是新远程仓库的名称。
+
+<img src="C:\Users\16509\AppData\Roaming\Typora\typora-user-images\image-20221217111911881.png" alt="image-20221217111911881" style="zoom:80%;" />
+
+## 推送操作
+
+使用`push` 命令
+
+```txt
+git push 远程仓库地址别名 分支名
+```
+
